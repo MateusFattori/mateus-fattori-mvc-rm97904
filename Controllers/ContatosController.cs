@@ -1,0 +1,27 @@
+﻿using mateus_fattori_mvc_rm97904.Models;
+using Microsoft.AspNetCore.Mvc;
+using System.Diagnostics;
+
+namespace mateus_fattori_mvc_rm97904.Controllers
+{
+    public class ContatosController : Controller
+    {
+
+        private readonly ILogger<ContatosController> _logger;
+
+        public ContatosController(ILogger<ContatosController> logger)
+        {
+            _logger = logger;
+        }
+        public IActionResult Contatos()
+        {
+            return View();
+        }
+
+        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
+        public IActionResult Error()
+        {
+            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+        }
+    }
+}
